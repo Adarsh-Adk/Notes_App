@@ -64,7 +64,7 @@ class _NoteState extends State<Note> {
                 style: TextStyle(fontSize: 30,color: Colours().textColor),
                 decoration: InputDecoration(
                   fillColor: Colours().cardColor,
-                  filled: true,
+                  filled: false,
                   border: InputBorder.none,
                   hintText: "Title",hintStyle: TextStyle(color: Colours().hintColor)
                 ),
@@ -78,7 +78,7 @@ class _NoteState extends State<Note> {
                 style: TextStyle(fontSize: 20,color: Colours().textColor),
                 decoration: InputDecoration(
                   fillColor: Colours().cardColor,
-                  filled: true,
+                  filled: false,
                   border: InputBorder.none, hintText: "Add your notes here",hintStyle: TextStyle(color: Colours().hintColor)),
               ),
             ],
