@@ -74,8 +74,8 @@ class _HomeAppState extends State<HomeApp> {
             refresh();
           });
         },
-        backgroundColor: Colors.blue,
-        child: Icon(Icons.add),
+        backgroundColor: Colours().cardColor,
+        child: Icon(Icons.add,size: 50,color: Colours().mainColor,),
       ),
     );
   }
