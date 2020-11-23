@@ -66,7 +66,7 @@ class _NoteState extends State<Note> {
                   fillColor: Colours().cardColor,
                   filled: true,
                   border: InputBorder.none,
-                  hintText: "Title",
+                  hintText: "Title",hintStyle: TextStyle(color: Colours().hintColor)
                 ),
               ),
               SizedBox(
@@ -79,7 +79,7 @@ class _NoteState extends State<Note> {
                 decoration: InputDecoration(
                   fillColor: Colours().cardColor,
                   filled: true,
-                  border: InputBorder.none, hintText: "Add your notes here"),
+                  border: InputBorder.none, hintText: "Add your notes here",hintStyle: TextStyle(color: Colours().hintColor)),
               ),
             ],
           ),

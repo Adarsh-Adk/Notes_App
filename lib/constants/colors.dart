@@ -5,4 +5,5 @@ class Colours {
   Color backgroundColor = Colors.grey[800];
   Color cardColor = Colors.grey[850];
   Color textColor = Colors.grey[300];
+  Color hintColor = Colors.grey[500];
 }
