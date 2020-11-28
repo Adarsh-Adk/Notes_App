@@ -41,7 +41,7 @@ class _HomeAppState extends State<HomeApp> {
           itemBuilder: (context, index) {
             Model note = notes[index];
             return Container(
-                padding: EdgeInsets.only(left: 3, right: 3, top: 3, bottom: 3),
+                padding: EdgeInsets.all(3),
                 alignment: AlignmentDirectional.center,
                 child: GestureDetector(
                     onLongPress: () {},
@@ -52,6 +52,7 @@ class _HomeAppState extends State<HomeApp> {
                               builder: (context) => Note(note: note,)));
                     },
                     child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       color: Colours().cardColor,
                       child: Container(
                         padding: EdgeInsets.all(10),
