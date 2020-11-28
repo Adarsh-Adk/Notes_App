@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notes/constants/colors.dart';
 import 'package:notes/db/db.dart';
@@ -29,6 +30,9 @@ class _HomeAppState extends State<HomeApp> {
       backgroundColor: Colours().backgroundColor,
       appBar: AppBar(
         title: Text("Notes"),
+        actions: [IconButton(icon: Icon(Icons.refresh), onPressed: (){setState(() {
+          refresh();
+        });})],
       ),
       body: GridView.builder(
           itemCount: notes.length,
@@ -50,19 +54,23 @@ class _HomeAppState extends State<HomeApp> {
                     child: Card(
                       color: Colours().cardColor,
                       child: Container(
+                        padding: EdgeInsets.all(10),
                           height: MediaQuery.of(context).size.width * 0.49,
                           width: MediaQuery.of(context).size.width * 0.49,
                           child: Center(
-                            child: ListTile(
-                              title: Text(note.title,maxLines: 3,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                              subtitle: Text(note.content,maxLines: 3,style: TextStyle(fontSize: 13,),textAlign: TextAlign.center,),
-                              trailing: IconButton(
-                                  icon: Icon(Icons.delete), onPressed: ()async{setState(() {
-                                    loading = true;
-                                    delete(notes[index]);
-                                    refresh();
-                                  });}),
-                              selected: true,
+                            child: Column(
+                              children: [
+                                Text(note.title,maxLines: 1,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colours().textColor),textAlign: TextAlign.center,),
+                                SizedBox(height: 10,),
+                                Container(height: (MediaQuery.of(context).size.width*0.15)-9,
+                                    child: Text(note.content,maxLines: 3,style: TextStyle(fontSize: 13,color: Colours().textColor),textAlign: TextAlign.start,)),
+                                SizedBox(height: 25,),
+                                IconButton(icon: Icon(Icons.delete_forever,color: Colours().textColor,), onPressed: ()async{setState(() {
+                                  loading = true;
+                                  delete(notes[index]);
+                                  refresh();
+                                });}),
+                              ],
                             ),
                           )),
                     )));

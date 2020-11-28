@@ -61,6 +61,8 @@ class _NoteState extends State<Note> {
               TextField(
                 controller: _titleController,
                 autofocus: true,
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
                 style: TextStyle(fontSize: 30,color: Colours().textColor),
                 decoration: InputDecoration(
                   fillColor: Colours().cardColor,
@@ -74,6 +76,7 @@ class _NoteState extends State<Note> {
               ),
               TextField(
                 controller: _notesController,
+                textInputAction: TextInputAction.done,
                 maxLines: 20,
                 style: TextStyle(fontSize: 20,color: Colours().textColor),
                 decoration: InputDecoration(
@@ -96,8 +99,9 @@ class _NoteState extends State<Note> {
         await DB().add(widget.note);
     }
     setState(() => loading = false);
-    Navigator.pop(context);
     refresh();
+    Navigator.pop(context);
+
   }
    Future<void> refresh() async {
     await DB().getNotes();
