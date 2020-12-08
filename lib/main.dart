@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes/constants/colors.dart';
 import 'package:notes/pages/home.dart';
+
 void main(){
   runApp(MyApp());
 }
