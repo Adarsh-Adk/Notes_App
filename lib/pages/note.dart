@@ -178,7 +178,7 @@ class _NoteState extends State<Note> {
             children: [
               TextField(
                 controller: _titleController,
-                autofocus: true,
+                autofocus: false,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 style: TextStyle(fontSize: 30, color: Colours().textColor),

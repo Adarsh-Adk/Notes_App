@@ -184,7 +184,8 @@ class _HomeAppState extends State<HomeApp> {
             itemBuilder: (context, index) {
               print("app repainted");
               return Container(
-                  padding: EdgeInsets.all(3),
+                  padding:
+                      EdgeInsets.only(left: 5, right: 3, top: 5, bottom: 0),
                   alignment: AlignmentDirectional.center,
                   child: GestureDetector(
                       onLongPress: () {},
@@ -198,14 +199,17 @@ class _HomeAppState extends State<HomeApp> {
                       },
                       child: Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(20)),
                         color: Colours().cardColor,
                         child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.only(
+                                top: 10, left: 10, right: 10, bottom: 5),
                             height: MediaQuery.of(context).size.width * 0.49,
                             width: MediaQuery.of(context).size.width * 0.49,
                             child: Center(
                               child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
                                     // note.title,
@@ -235,7 +239,7 @@ class _HomeAppState extends State<HomeApp> {
                                         textAlign: TextAlign.start,
                                       )),
                                   SizedBox(
-                                    height: 25,
+                                    height: 30,
                                   ),
                                   IconButton(
                                       icon: Icon(
